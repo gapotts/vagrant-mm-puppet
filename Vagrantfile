@@ -1,11 +1,11 @@
 # -*- mode: ruby -*-
 # vi: set ft=ruby :
  
-# Builds single Foreman server and
-# multiple Puppet Agent Nodes using JSON config file
-# Gary A. Stafford - 01/15/2015
+# multiple Puppet Agent Nodes using YAML config file
+# modified from original from Gary A. Stafford
+# Changeed to read from YAML Greg Potts 03-31-2015
  
-# read vm and chef configurations from JSON files
+# read vm and chef configurations from YAML files
 require 'yaml'
 nodes_config = YAML.load_file('nodes.yaml')['nodes']
  
