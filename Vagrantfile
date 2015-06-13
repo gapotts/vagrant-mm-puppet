@@ -27,7 +27,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
       end
  
       config.vm.hostname = vmname
-      config.vm.network :private_network, ip: vmspec['ip']
+      vmspec['ip'].each do |addr|
+        config.vm.network :private_network, ip: addr
+      end
  
       config.vm.provider :virtualbox do |vb|
         vb.customize ["modifyvm", :id, "--memory", vmspec['memory']]

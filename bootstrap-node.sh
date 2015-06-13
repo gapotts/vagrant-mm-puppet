@@ -1,3 +1,3 @@
 #! /bin/sh
 
-sudo puppet apply /vagrant/common.pp
+#sudo puppet apply /vagrant/common.pp

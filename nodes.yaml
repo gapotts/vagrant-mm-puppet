@@ -1,8 +1,11 @@
 ---
 nodes: {
   puppet.example.com:
-  { box: 'chef/centos-6.6',
-    ip: "192.168.32.5",
+  { box: 'centos-6.6-x86_64',
+    ip: [
+      "192.168.32.5",
+      "192.168.33.5"
+    ],
     ports: [
     ],
     memory: 1024,
@@ -10,15 +13,29 @@ nodes: {
   },
   node1.example.com:
   { box: 'centos-6.6-x86_64',
-    ip: "192.168.32.10",
+    ip: [
+      "192.168.32.10"
+    ],
     ports: [
+      {
+        host: 8080,
+        guest: 80,
+        id: 'web'
+      },
+      {
+        host: 5668,
+        guest: 5668,
+        id: 'icinga'
+      }
     ],
     memory: 1024,
     bootstrap: "bootstrap-node.sh"
   },
   node2.example.com:
   { box: 'centos-6.6-x86_64',
-    ip: "192.168.32.20",
+    ip: [
+      "192.168.32.20"
+    ],
     ports: [
     ],
     memory: 1024,
