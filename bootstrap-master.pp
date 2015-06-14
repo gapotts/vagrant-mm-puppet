@@ -30,3 +30,7 @@ class { 'r10k':
   purgedirs => ["${::settings::confdir}/environments"],
   manage_modulepath => false,
 }
+
+ class { 'puppetdb': }
+ class { 'puppetdb::master::config': }
+ 
