@@ -15,8 +15,10 @@ sudo puppet apply /vagrant/common.pp
 sudo puppet module install theforeman-puppet
 #sudo puppet module install stephenrjohnson-puppet
 sudo puppet module install zack/r10k
-sudo puppet module install puppet/puppetdb
+sudo puppet module install puppetlabs/puppetdb
 
 sudo puppet apply /vagrant/bootstrap-master.pp
 
 sudo r10k deploy environment -pv
+
+sudo puppet apply /vagrant/bootstrap-puppetdb.pp

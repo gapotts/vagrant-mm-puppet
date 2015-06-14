@@ -31,6 +31,3 @@ class { 'r10k':
   manage_modulepath => false,
 }
 
- class { 'puppetdb': }
- class { 'puppetdb::master::config': }
- 
